@@ -57,6 +57,9 @@ module.exports = function (grunt) {
                     'node_modules/jschardet/dist/jschardet.min.js',
                     'node_modules/pptxgenjs/dist/pptxgen.bundle.js',
                     'node_modules/angular-loading-bar/build/loading-bar.min.js',
+                    'node_modules/react/umd/react.development.js',
+                    'node_modules/react-dom/umd/react-dom-test-utils.development.js',
+                    'node_modules/react2angular/index.js'
                 ],
                 dest: '../../public/js/angular-common-libs.js',
                 nonull: true

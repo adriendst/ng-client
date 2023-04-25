@@ -3,9 +3,10 @@
   angular
   .module('ClientApp')
   .controller('ClientSettingsCtrl', [
-    '$scope', 'gettextCatalog', 'toastr', '$http', 'StatsService',
+    '$scope', 'gettextCatalog', 'toastr', '$http', 'StatsService', 'react2angular',
     ClientSettingsCtrl
-  ]);
+  ])
+  .component("RenderImage", react2angular(RenderImage, ["imageUrl"]));
 
   /**
   * Account Controller for the Client module

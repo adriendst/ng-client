@@ -62,19 +62,19 @@ const appComponentConfig = {
   }
 }; */
 
-/* import { react2angular } from 'react2angular' */
-
+/* import { react2angular } from 'react2angular'
+ */
 
 /* import jquery from 'jquery'
  */
 
 /* const react2angular = require('react2angular') */
 
+
 angular
 .module('ClientApp', ['ngMaterial', 'ngAnimate', 'toastr', 'ui.router', 'gettext', 'ngResource',
 'LocalStorageModule', 'md.data.table', 'ncy-angular-breadcrumb', 'ngFileUpload',
 'ui.tree', 'ngMessages', 'angularTrix', 'AnrModule', 'ng-sortable'])
-/* .component("renderImage", react2angular(RenderImage, ["imageUrl"]))*/
 .config(['$mdThemingProvider', '$stateProvider', '$urlRouterProvider', '$resourceProvider',
 'localStorageServiceProvider', '$httpProvider', '$breadcrumbProvider', '$provide', 'gettext', '$mdAriaProvider',
 '$mdDateLocaleProvider', '$locationProvider','$sceDelegateProvider',
