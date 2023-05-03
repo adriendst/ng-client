@@ -1,3 +1,4 @@
+
 /* class AppController {
   constructor($scope) {
     this.$scope = $scope;
@@ -84,9 +85,6 @@ function ($mdThemingProvider, $stateProvider, $urlRouterProvider, $resourceProvi
     
     // Store the state provider to be allow controllers to inject their routes
     window.$stateProvider = $stateProvider
-
-      console.log('coucou')
-
       
 
     $sceDelegateProvider.resourceUrlWhitelist([
