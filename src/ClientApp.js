@@ -66,14 +66,13 @@ const appComponentConfig = {
 /* import { react2angular } from 'react2angular'
  */
 
-/* import jquery from 'jquery'
- */
-
 /* const react2angular = require('react2angular') */
+
+/* var UI_ROUTER_REACT_HYBRID = require("@uirouter/react-hybrid"); */
 
 
 angular
-.module('ClientApp', ['ngMaterial', 'ngAnimate', 'toastr', 'ui.router', 'gettext', 'ngResource',
+.module('ClientApp', ['ngMaterial', 'ngAnimate', 'toastr', 'ui.router', 'ui.router.react.hybrid',  'gettext', 'ngResource',
 'LocalStorageModule', 'md.data.table', 'ncy-angular-breadcrumb', 'ngFileUpload',
 'ui.tree', 'ngMessages', 'angularTrix', 'AnrModule', 'ng-sortable'])
 .config(['$mdThemingProvider', '$stateProvider', '$urlRouterProvider', '$resourceProvider',

@@ -32,7 +32,7 @@ module.exports = function (grunt) {
                     'node_modules/angular-aria/angular-aria.min.js',
                     'node_modules/angular-gettext/dist/angular-gettext.min.js',
                     'node_modules/angular-material/angular-material.min.js',
-                    'node_modules/@uirouter/angularjs/release/angular-ui-router.min.js',
+                    //'node_modules/@uirouter/angularjs/release/angular-ui-router.min.js',
                     'node_modules/angular-resource/angular-resource.min.js',
                     'node_modules/angular-local-storage/dist/angular-local-storage.min.js',
                     'node_modules/angular-material-data-table/dist/md-data-table.min.js',
@@ -58,10 +58,12 @@ module.exports = function (grunt) {
                     'node_modules/pptxgenjs/dist/pptxgen.bundle.js',
                     'node_modules/angular-loading-bar/build/loading-bar.min.js',
                     'node_modules/react/umd/react.development.js',
-                    'node_modules/react-dom/umd/react-dom-test-utils.development.js',
-                    'node_modules/react2angular/index.js',
-                    'views/testreact/react-component.tsx',
-                    'views/testreact/index.js'
+                    'node_modules/react-dom/umd/react-dom.development.js',
+                    //'node_modules/react2angular/index.js',
+                    'node_modules/@uirouter/react-hybrid/lib/index.js',
+
+/*                     'views/testreact/react-component.tsx',
+                    'views/testreact/index.js' */
                 ],
                 dest: '../../public/js/angular-common-libs.js',
                 nonull: true
