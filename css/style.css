@@ -1,3 +1,11 @@
+.card div{
+    color : black;
+}
+
+.icon-large{
+    font-size: 1.5rem;
+}
+
 a {
     color: #FFEB3B;
 }
@@ -123,3 +131,32 @@ md-sidenav.md-sidenav-left{
   font-size: 12px;
   transform: translateY(-25%);
 }
+
+.form-control {
+    border: none;
+    border-bottom: 1px solid #ced4da;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
+    font-size: 12px;
+    height: 30px;
+  }
+  
+  .form-control:focus {
+    box-shadow: none;
+  }
+
+
+  .form-select {
+    border: none;
+    border-bottom: 1px solid #ced4da;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
+    font-size: 12px;
+    height: 30px;
+  }
+  
+  .form-select:focus {
+    box-shadow: none;
+  }

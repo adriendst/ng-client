@@ -20,18 +20,30 @@ module.exports = function (grunt) {
             }
         },
 
+
         concat: {
             options: {
                 separator: ";\n"
             },
             angularCommonLibsJs: {
                 src: [
-                    'node_modules/jquery/dist/jquery.min.js',
+                    'node_modules/bootstrap/dist/js/bootstrap.js',
                     'node_modules/angular/angular.min.js',
+                    'node_modules/jquery/dist/jquery.min.js',
                     'node_modules/angular-animate/angular-animate.min.js',
                     'node_modules/angular-aria/angular-aria.min.js',
                     'node_modules/angular-gettext/dist/angular-gettext.min.js',
                     'node_modules/angular-material/angular-material.min.js',
+                    'node_modules/iso-639-1/build/index.js',
+                    'node_modules/node-forge/dist/forge.min.js',
+                    'node_modules/react/umd/react.development.js',
+                    'node_modules/react-dom/umd/react-dom.development.js',
+                    /* 'node_modules/antd/dist/antd.js', */
+                    /* 'node_modules/react-bootstrap/cjs/index.js', */
+                    'node_modules/ngreact/ngReact.js',
+                    'node_modules/lodash.frompairs/index.js',
+                    'node_modules/lodash/lodash.js',
+                    'node_modules/ngcomponent/index.js',
                     'node_modules/@uirouter/angularjs/release/angular-ui-router.min.js',
                     'node_modules/angular-resource/angular-resource.min.js',
                     'node_modules/angular-local-storage/dist/angular-local-storage.min.js',
@@ -49,19 +61,16 @@ module.exports = function (grunt) {
                     'node_modules/angular-legacy-sortablejs/angular-legacy-sortable.js',
                     'node_modules/d3/dist/d3.min.js',
                     'node_modules/save-svg-as-png/lib/saveSvgAsPng.js ',
-                    'node_modules/iso-639-1/build/index.js',
                     'node_modules/xlsx/dist/xlsx.full.min.js',
                     'node_modules/xlsx/dist/xlsx.core.min.js',
-                    'node_modules/node-forge/dist/forge.min.js',
                     'node_modules/papaparse/papaparse.min.js',
                     'node_modules/jschardet/dist/jschardet.min.js',
                     'node_modules/pptxgenjs/dist/pptxgen.bundle.js',
                     'node_modules/angular-loading-bar/build/loading-bar.min.js',
-                    'node_modules/react/umd/react.development.js',
-                    'node_modules/react-dom/umd/react-dom-test-utils.development.js',
+                    'node_modules/@uirouter/react-hybrid/lib/angularjs/module.js',
                     'node_modules/react2angular/index.js',
-                    'views/testreact/react-component.tsx',
-                    'views/testreact/index.js'
+                    'node_modules/i18next/i18next.min.js',
+                    'node_modules/react-i18next/dist/umd/react-i18next.js'
                 ],
                 dest: '../../public/js/angular-common-libs.js',
                 nonull: true
@@ -76,6 +85,10 @@ module.exports = function (grunt) {
                     'node_modules/trix/dist/trix.css',
                     'node_modules/flag-icons/css/flag-icons.min.css',
                     'node_modules/angular-loading-bar/build/loading-bar.css',
+                    'node_modules/bootstrap/dist/css/bootstrap.css',
+                    'node_modules/css.gg/icons/all.css',
+                    'node_modules/bootstrap-icons/font/bootstrap-icons.css',
+                    'node_modules/font-awesome/css/font-awesome.min.css',
                 ],
                 dest: '../../public/css/angular-common-libs.css',
                 nonull: true
@@ -96,6 +109,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-angular-gettext');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+
 
     // Default task(s).
     grunt.registerTask('default', []);

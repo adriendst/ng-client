@@ -1,3 +1,5 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet">
+
 <div ng-controller="ClientSettingsCtrl" ng-if="isAllowed('superadminfo')" ng-init="getSettings()">
     <md-card md-theme="light">
         <md-card-title>
@@ -15,7 +17,8 @@
                 <md-input-container class="md-block">
                     <label translate>Contact e-mail</label>
                     <md-icon>email</md-icon>
-                    <input type="email" autocomplete="email" ng-model="client.contact_email" name="email" ng-pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" required>
+                    <input type="email" autocomplete="email" ng-model="client.contact_email" name="email"
+                        ng-pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" required>
                     <div ng-messages="accountForm.email.$error" role="alert">
                         <div ng-message="required">{{ 'You must enter an e-mail address' | translate }}</div>
                     </div>
@@ -23,17 +26,21 @@
 
                 <h2 translate>Sharing statistics</h2>
                 <md-input-container class="md-block">
-                  <md-icon>bar_chart</md-icon>
-                  <label translate>Do you agree to share the statistics ?</label>
-                  <md-select title="{{'Sharing of anonymised statistics helps the community to see risks trends and weather forecast' | translate }}" ng-model="client.stats">
-                      <md-option ng-value="true">{{ 'I agree' | translate }}</md-option>
-                      <md-option ng-value="false">{{ 'I don’t agree' | translate }}</md-option>
-                  </md-select>
+                    <md-icon>bar_chart</md-icon>
+                    <label translate>Do you agree to share the statistics ?</label>
+                    <md-select
+                        title="{{'Sharing of anonymised statistics helps the community to see risks trends and weather forecast' | translate }}"
+                        ng-model="client.stats">
+                        <md-option ng-value="true">{{ 'I agree' | translate }}</md-option>
+                        <md-option ng-value="false">{{ 'I don’t agree' | translate }}</md-option>
+                    </md-select>
                 </md-input-container>
                 <div layout="row">
-                    <md-button class="md-raised md-primary" ng-disabled="clientForm.$invalid" ng-click="updateClient()">{{ 'Update settings' | translate }}</md-button>
+                    <md-button class="md-raised md-primary" ng-disabled="clientForm.$invalid"
+                        ng-click="updateClient()">{{ 'Update settings' | translate }}</md-button>
                 </div>
             </form>
         </md-card-content>
     </md-card>
+    <my-component/>
 </div>
