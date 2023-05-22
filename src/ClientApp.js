@@ -1,78 +1,5 @@
-
-/* class AppController {
-  constructor($scope) {
-    this.$scope = $scope;
-    this.todoItems = [
-      { id: '1', isSelected: true, label: 'Wake up' },
-      { id: '2', isSelected: false, label: 'Cook breakfast' },
-      { id: '3', isSelected: false, label: 'Conquer the World' }
-    ];
-    // All inputs need to be passed as expression to bridge component,
-    // so we bind "this" context to the controller method,
-    // for the same reason we do it in React components.
-    this.handleItemSelect = this.handleItemSelect.bind(this);
-  }
-
-  handleItemSelect(itemId, nextState) {
-    // Controller properties passed to bridge component must be immutable,
-    // otherwise its "$onChanges" life cycle method won't be called
-    // and the underlying React component won't be updated.
-    this.todoItems = this.todoItems.map(item => {
-      if (item.id === itemId) {
-        return Object.assign({}, item, { isSelected: nextState });
-      }
-      return item;
-    });
-    // Need to trigger digest cycle manually
-    // since we changed todoItems from outside of the framework
-    this.$scope.$apply();
-  }
-}
-
-const appComponentConfig = {
-  controller: AppController,
-  // All inputs must be passed to the bridge component as expression.
-  template: `
-    <todo-list-bridge
-      title="'My TODO List'"
-      items="$ctrl.todoItems"
-      on-select="::$ctrl.handleItemSelect"
-    ></todo-list-bridge>
-  `
-};
- */
-
-
-
-/* const angularComponent = {
-  template: ` <h1>I'm the angular component</h1>
-              <div>value: {{$ctrl.value}}</div>
-              <react-component value="$ctrl.value + 1" 
-              add-one="$ctrl.addOne"></react-component>`,
-              // Note addOne is not directly called,
-              // but instead passed as parameter
-  controller: function($scope) {
-    const $ctrl = $scope.$ctrl;
-    $ctrl.value = 1;
-    $ctrl.addOne = () => {
-      $ctrl.value = $ctrl.value + 1;
-      console.log('added one', $ctrl.value);
-      $scope.$apply();
-    }
-    
-  }
-}; */
-
-/* import { react2angular } from 'react2angular'
- */
-
-/* const react2angular = require('react2angular') */
-
-/* var UI_ROUTER_REACT_HYBRID = require("@uirouter/react-hybrid"); */
-
-
 angular
-.module('ClientApp', ['ngMaterial', 'ngAnimate', 'toastr', 'ui.router', 'ui.router.react.hybrid',  'gettext', 'ngResource',
+.module('ClientApp', ['ngMaterial', 'ngAnimate', 'toastr', 'ui.router.react.hybrid', 'gettext', 'ngResource',
 'LocalStorageModule', 'md.data.table', 'ncy-angular-breadcrumb', 'ngFileUpload',
 'ui.tree', 'ngMessages', 'angularTrix', 'AnrModule', 'ng-sortable'])
 .config(['$mdThemingProvider', '$stateProvider', '$urlRouterProvider', '$resourceProvider',
@@ -81,7 +8,7 @@ angular
 function ($mdThemingProvider, $stateProvider, $urlRouterProvider, $resourceProvider, localStorageServiceProvider,
   $httpProvider, $breadcrumbProvider, $provide, gettext, $mdAriaProvider, $mdDateLocaleProvider, $locationProvider,
   $sceDelegateProvider) {
-    
+
     // Store the state provider to be allow controllers to inject their routes
     window.$stateProvider = $stateProvider
       
@@ -112,10 +39,6 @@ function ($mdThemingProvider, $stateProvider, $urlRouterProvider, $resourceProvi
       'contrastDefaultColor': 'light',
       'contrastDarkColors': '50 100 200 A100 A200'
     });
-
-
-    
-
 
     $mdThemingProvider.theme('default')
     .primaryPalette('monarcfo')
@@ -248,11 +171,7 @@ function ($mdThemingProvider, $stateProvider, $urlRouterProvider, $resourceProvi
     }).state('main.admin.settings', {
       url: "/settings",
       views: {
-        "main@main": {
-/*          component : "myApp"
- */        
-templateUrl: "views/client.admin.settings.html"
-        }
+        "main@main": {templateUrl: "views/client.admin.settings.html"}
       },
       ncyBreadcrumb: {
         label: gettext('General settings')
@@ -496,8 +415,12 @@ templateUrl: "views/client.admin.settings.html"
       }
     }]);
     $httpProvider.interceptors.push('monarcHttpInter');
-  }]).
-  run(['ConfigService', 'UserService', 'gettextCatalog', '$rootScope', '$stateParams', '$injector', '$transitions',
+  }])
+/*   .controller('helloController', function($scope) {
+    $scope.person = { fname: 'Clark', lname: 'Kent' };
+  })
+  .value('Welcome', Welcome) */
+  .run(['ConfigService', 'UserService', 'gettextCatalog', '$rootScope', '$stateParams', '$injector', '$transitions',
   function (ConfigService, UserService, gettextCatalog, $rootScope, $stateParams, $injector, $transitions) {
 
     $rootScope.OFFICE_MODE = 'FO';
