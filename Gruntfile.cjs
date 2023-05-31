@@ -20,7 +20,6 @@ module.exports = function (grunt) {
             }
         },
 
-
         concat: {
             options: {
                 separator: ";\n"
@@ -60,7 +59,7 @@ module.exports = function (grunt) {
                     'node_modules/sortablejs/Sortable.min.js',
                     'node_modules/angular-legacy-sortablejs/angular-legacy-sortable.js',
                     'node_modules/d3/dist/d3.min.js',
-                    'node_modules/save-svg-as-png/lib/saveSvgAsPng.js ',
+                    'node_modules/save-svg-as-png/lib/saveSvgAsPng.js',
                     'node_modules/xlsx/dist/xlsx.full.min.js',
                     'node_modules/xlsx/dist/xlsx.core.min.js',
                     'node_modules/papaparse/papaparse.min.js',
@@ -70,7 +69,12 @@ module.exports = function (grunt) {
                     'node_modules/@uirouter/react-hybrid/lib/angularjs/module.js',
                     'node_modules/react2angular/index.js',
                     'node_modules/i18next/i18next.min.js',
-                    'node_modules/react-i18next/dist/umd/react-i18next.js'
+                    'node_modules/react-i18next/dist/umd/react-i18next.js',
+                    'node_modules/select2/dist/js/select2.full.js',
+                    /* 'node_modules/multiselect-react-dropdown/dist/multiselect-react-dropdown.esm.js',
+                                       'node_modules/@heroicons/react/solid/index.js',
+                                       'node_modules/@robertz65/lyte/dist/cjs/index.js' */
+                                       'translation/translation.js'
                 ],
                 dest: '../../public/js/angular-common-libs.js',
                 nonull: true
@@ -86,9 +90,10 @@ module.exports = function (grunt) {
                     'node_modules/flag-icons/css/flag-icons.min.css',
                     'node_modules/angular-loading-bar/build/loading-bar.css',
                     'node_modules/bootstrap/dist/css/bootstrap.css',
-                    'node_modules/css.gg/icons/all.css',
-                    'node_modules/bootstrap-icons/font/bootstrap-icons.css',
-                    'node_modules/font-awesome/css/font-awesome.min.css',
+                    /* 'node_modules/css.gg/icons/all.css',
+                                       'node_modules/bootstrap-icons/font/bootstrap-icons.css',
+                                       'node_modules/font-awesome/css/font-awesome.min.css', */
+                    'node_modules/select2/dist/css/select2.css',
                 ],
                 dest: '../../public/css/angular-common-libs.css',
                 nonull: true
@@ -102,14 +107,14 @@ module.exports = function (grunt) {
                     '../../public/js/angular-common-libs.min.js': ['../../public/js/angular-common-libs.js']
                 }
             }
-        }
+        },
+
     });
 
     grunt.loadNpmTasks('grunt-shell');
     grunt.loadNpmTasks('grunt-angular-gettext');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
-
 
     // Default task(s).
     grunt.registerTask('default', []);

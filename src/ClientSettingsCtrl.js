@@ -1,70 +1,49 @@
 (function () {
 
-
-  i18next
-    .init({
+/*   i18next
+  .init({
       lng: localStorage.getItem('ls.uiLanguage').replace(/"/g, ''),
       debut: true,
       resources: {
-        /*  en : {
-           translation : {
-             "General settings": "General settings",
-             "Organization information": "Organization information",
-             "Sharing statistics": "Sharging statistics",
-             "Name": "Name",
-             "Contact e-mail": "Contact e-mail",
-             "Do you agree to share the statistics ?": "Do you agree to share the statistics ?",
-             "I agree": "I agree",
-             "I don't agree": "I don't agree",
-             "Update settings": "Update settings"
-           }
-         }, */
-        1: {
-          translation: {
-            "General settings": "Paramètres généraux",
-            "Organization information": "Informations de l'entité",
-            "Sharing statistics": "Partage des statistiques",
-            "Name": "Nom",
-            "Contact e-mail": "E-mail du contact",
-            "Do you agree to share the statistics ?": "Acceptez-vous de partager les statistiques ?",
-            "I agree": "Je suis d'accord",
-            "I don’t agree": "Je ne suis pas d'accord",
-            "Update settings": "Mettre à jour les paramètres",
-            "You must enter a valid e-mail address": "Vous devez entrer une adresse e-mail valide",
-            "Sharing of anonymised statistics helps the community to see risks trends and weather forecast": "Le partage de statistiques anonymes aide la communauté à voir les tendances des risques et les prévisions météorologiques"
+          0: {
+              translation: en
           },
-        }
+          1: {
+              translation: fr,
+          }
       }
-    })
+  }) */
+
+  refreshLanguage()
 
 
 
-  const Input = (props) => {
-    return React.createElement(
-      'div', { className: 'row mb-4' },
-      React.createElement(
-        'div', { className: 'col-auto d-flex align-items-center' },
-        React.createElement(
-          'i', { className: props.icon + ' icon-large' },
-        ),
-      ),
-      React.createElement(
-        'div', { className: 'col' },
-        React.createElement('label', { style: { color: 'rgba(0,0,0,0.54)' } }, i18next.t(props.label) + ' *'),
-        React.createElement(
-          'div', { className: '' },
-          React.createElement('input', {
-            type: 'text',
-            className: 'form-control',
-            defaultValue: props.value,
-            onChange: props.onChange
-          })
-        ),
-      )
-    )
-  }
+    const InputWithIcon = (props) => {
+        return React.createElement(
+            'div', { className: `row mb-4 ${props.className} ` },
+            React.createElement(
+                'div', { className: 'col-auto d-flex align-items-center' },
+                React.createElement(
+                    'i', { className: props.icon + ' icon-large' },
+                ),
+            ),
+            React.createElement(
+                'div', { className: 'col' },
+                React.createElement('label', { style: { color: 'rgba(0,0,0,0.54)' } }, i18next.t(props.label) + ' *'),
+                React.createElement(
+                    'div', { className: '' },
+                    React.createElement('input', {
+                        type: 'text',
+                        className: 'form-control',
+                        defaultValue: props.value,
+                        onChange: props.onChange
+                    })
+                ),
+            )
+        )
+    }
 
-  const Select = (props) => {
+  const SelectWithIcon = (props) => {
     return React.createElement(
       'div', { className: 'row mb-2' },
       React.createElement(
@@ -77,7 +56,7 @@
         'div', { className: 'col' },
         React.createElement('label', { style: { color: 'rgba(0,0,0,0.54)' } }, i18next.t(props.label)),
         React.createElement(
-          'div', { className: '' },
+          'div', null,
           React.createElement('select', {
             className: 'form-select',
             value: props.value,
@@ -98,7 +77,7 @@
   }
 
 
-  const MyComponent = () => {
+  const GeneralSettings = () => {
 
     const token = localStorage.getItem('ls.auth_token').replace(/"/g, '');
 
@@ -208,13 +187,13 @@
           React.createElement('h3', { className: 'my-3' }, i18next.t('General settings')),
           React.createElement('form', { name: 'clientForm', onSubmit: updateClient },
             React.createElement('h2', { className: 'mb-4' }, i18next.t('Organization information')),
-            React.createElement(Input, { icon: 'bi bi-caret-right-fill', label: 'Name', value: client.name, onChange: onClientNameChange }),
-            React.createElement(Input, { icon: 'bi bi-envelope-fill', label: 'Contact e-mail', value: client.contact_email, onChange: onClientMailChange }),
+            React.createElement(InputWithIcon, { icon: 'bi bi-caret-right-fill', label: 'Name', value: client.name, onChange: onClientNameChange }),
+            React.createElement(InputWithIcon, { icon: 'bi bi-envelope-fill', label: 'Contact e-mail', value: client.contact_email, onChange: onClientMailChange }),
             isInvalidEmail && React.createElement('div', { className: 'text-danger' },
               React.createElement('p', { className: 'd-flex justify-content-center', style: { color: 'red' } }, i18next.t('You must enter a valid e-mail address'))
             ),
             React.createElement('h2', { className: 'mb-4' }, i18next.t('Sharing statistics')),
-            React.createElement(Select, { icon: 'bi bi-bar-chart-fill', label: 'Do you agree to share the statistics ?', value: client.stats.toString(), onChange: onShareStatsChange, options: options }),
+            React.createElement(SelectWithIcon, { icon: 'bi bi-bar-chart-fill', label: 'Do you agree to share the statistics ?', value: client.stats.toString(), onChange: onShareStatsChange, options: options }),
             React.createElement('div', { className: 'form-group mt-4' },
               React.createElement('button', {
                 className: 'btn btn-primary',
@@ -231,46 +210,16 @@
   angular
     .module('ClientApp')
     .controller('ClientSettingsCtrl', [
-      '$scope', 'gettextCatalog', 'toastr', '$http', 'StatsService', /* '$injector', */
+      '$scope', 'gettextCatalog', 'toastr', '$http', 'StatsService',
       ClientSettingsCtrl
     ])
-    .component('myComponent', react2angular(MyComponent))
+    .component('generalSettings', react2angular(GeneralSettings))
 
 
   /**
   * Account Controller for the Client module
   */
-  function ClientSettingsCtrl($scope, gettextCatalog, toastr, $http, StatsService/* , $injector */) {
-
-    /*     var ConfigService = $injector.get('ConfigService');
-    
-        console.log(ConfigService.getLanguages())
-    
-        console.log(ISO6391.getName('fr')) */
-    /* 
-        var uiLang = UserService.getUiLanguage();
-        console.log(uiLang) */
-    /*     console.log(ISO6391.getCode(ISO6391.getName('fr')))
-     */
-
-    /* const index = 2; // Index de la langue
-    const languageCode = ISO6391.getCode(index);
-    console.log(languageCode)
-     */
-
-    /* const languageIndex = 1; // Exemple : 1 correspond à l'index pour la langue française
-    const languages = ISO6391.getLanguages();
-    console.log(self)
-    
-    let languageCode = '';
-    if (languageIndex >= 0 && languageIndex < languages.length) {
-      const language = languages[languageIndex];
-      if (typeof language === 'string') {
-        languageCode = ISO6391.getCode(language.toLowerCase());
-      }
-    }
-    
-    console.log(languageCode); */
+  function ClientSettingsCtrl($scope, gettextCatalog, toastr, $http, StatsService) {
 
     $scope.getSettings = function () {
       $http.get('api/client').then(function (data) {
