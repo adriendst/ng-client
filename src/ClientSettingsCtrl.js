@@ -14,10 +14,6 @@
       }
   }) */
 
-  refreshLanguage()
-
-
-
     const InputWithIcon = (props) => {
         return React.createElement(
             'div', { className: `row mb-4 ${props.className} ` },

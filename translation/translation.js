@@ -1,5 +1,4 @@
 function refreshLanguage(){
-    console.log(localStorage.getItem('ls.uiLanguage').replace(/"/g, ''))
     i18next
     .init({
         lng: localStorage.getItem('ls.uiLanguage').replace(/"/g, ''),

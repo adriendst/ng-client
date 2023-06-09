@@ -71,10 +71,13 @@ module.exports = function (grunt) {
                     'node_modules/i18next/i18next.min.js',
                     'node_modules/react-i18next/dist/umd/react-i18next.js',
                     'node_modules/select2/dist/js/select2.full.js',
+                    //'node_modules/react-dnd/dist/index.js',
                     /* 'node_modules/multiselect-react-dropdown/dist/multiselect-react-dropdown.esm.js',
                                        'node_modules/@heroicons/react/solid/index.js',
                                        'node_modules/@robertz65/lyte/dist/cjs/index.js' */
-                                       'translation/translation.js'
+                    'translation/translation.js',
+                    //'node_modules/react-dragula/dist/react-dragula.js',
+                    'node_modules/react-beautiful-dnd/dist/react-beautiful-dnd.js'
                 ],
                 dest: '../../public/js/angular-common-libs.js',
                 nonull: true
@@ -90,10 +93,10 @@ module.exports = function (grunt) {
                     'node_modules/flag-icons/css/flag-icons.min.css',
                     'node_modules/angular-loading-bar/build/loading-bar.css',
                     'node_modules/bootstrap/dist/css/bootstrap.css',
-                    /* 'node_modules/css.gg/icons/all.css',
-                                       'node_modules/bootstrap-icons/font/bootstrap-icons.css',
-                                       'node_modules/font-awesome/css/font-awesome.min.css', */
-                    'node_modules/select2/dist/css/select2.css',
+/*                      'node_modules/css.gg/icons/all.css',
+ *//*                                        'node_modules/bootstrap-icons/font/bootstrap-icons.css', */
+/*                                        'node_modules/font-awesome/css/font-awesome.min.css', 
+ */                    'node_modules/select2/dist/css/select2.css',
                 ],
                 dest: '../../public/css/angular-common-libs.css',
                 nonull: true
