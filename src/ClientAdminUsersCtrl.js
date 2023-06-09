@@ -20,7 +20,7 @@
                     React.createElement('input', {
                         type: 'text',
                         className: 'form-control',
-                        defaultValue: props.value,
+                        value: props.value,
                         onChange: props.onChange,
                         title: props.title
                     })
