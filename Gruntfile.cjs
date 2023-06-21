@@ -77,8 +77,32 @@ module.exports = function (grunt) {
                                        'node_modules/@robertz65/lyte/dist/cjs/index.js' */
                     'translation/translation.js',
                     //'node_modules/react-dragula/dist/react-dragula.js',
-                    'node_modules/react-beautiful-dnd/dist/react-beautiful-dnd.js'
-                ],
+/*                     'node_modules/react-beautiful-dnd/dist/react-beautiful-dnd.js',
+ */                    'node_modules/@dnd-kit/utilities/dist/utilities.cjs.development.js',
+                    'node_modules/@dnd-kit/accessibility/dist/accessibility.cjs.development.js',
+
+                    'node_modules/@dnd-kit/core/dist/core.cjs.development.js',
+
+                    'component/Component/InputWithIcon/InputWithIcon.jsx',
+                    'component/AnrRiskAnalysis/AnrRiskAnalysisDragNDrop/Droppable/Droppable.jsx',
+                    'component/AnrRiskAnalysis/AnrRiskAnalysisDragNDrop/InnerDroppable/InnerDroppable.jsx',
+                    'component/AnrRiskAnalysis/AnrRiskAnalysisDragNDrop/InstanceDraggable/InstanceDraggable.jsx',
+                    'component/AnrRiskAnalysis/AnrRiskAnalysisDragNDrop/CategorieName/CategorieName.jsx',
+                    'component/AnrRiskAnalysis/AnrRiskAnalysisDragNDrop/CategoryDraggable/CategoryDraggable.jsx',
+                    'component/AnrRiskAnalysis/AnrRiskAnalysisDragNDrop/DisplayCategories/DisplayCategories.jsx',
+                    'component/AnrRiskAnalysis/AnrRiskAnalysisDragNDrop/LinkDroppable/LinkDroppable.jsx',
+                    'component/Component/DropDownMenu/DropDownMenu.jsx',
+                    'component/Component/Select/Select.jsx',
+                    'component/Component/Pagination/Pagination.jsx',
+                    'component/ManageUser/HeaderCell/HeaderCell.jsx',
+                    'component/ManageUser/UserModal/UserModal.jsx',
+                    'component/ManageUser/UserAlert/UserAlert.jsx',
+                    'component/ManageUser/ManageUser.jsx',
+                    'component/AnrRiskAnalysis/AnrRiskAnalysisDragNDrop/AnrRiskAnalysisDragNDrop.jsx',
+                    'component/ClientSettings/ClientSettings.jsx'
+
+/*                     'node_modules/react-resizable/index.js'
+ */                ],
                 dest: '../../public/js/angular-common-libs.js',
                 nonull: true
             },
