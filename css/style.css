@@ -3,10 +3,83 @@
     vertical-align: middle;
 }
 
+
+.assetInfo{
+    background-color: #E3F2FD;
+    color : #0D47A1;
+    display : block;
+    width:100%;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.2),0 1px 1px 0 rgba(0,0,0,.14),0 2px 1px -1px rgba(0,0,0,.12);
+    
+}
+
+a{
+    text-decoration: none;
+}
+
+.btn-dnd{
+    font-size: 12px;
+}
+
+.customSelect{
+    max-height: 180px;
+    overflow-y: auto;
+    padding-left: 45px;
+}
+
+.customOption{
+    height : 25px;
+    padding-left: 15px;
+}
+
+.customOption:hover{
+    background-color: #CCCCCC;
+}
+
+.dropdown{
+    background-color: rgb(244, 244, 244);
+    color : rgba(0,0,0,0.54);
+    font-size: 14px;
+}
+
+thead, tbody, tfoot, tr, td, th{
+    border-style : outset;
+}
+
+.pagination-select{
+border-bottom : none !important
+}
+
+.form-check-input{
+    background-color: grey !important;
+}
+
+.form-check-input:checked{
+    background-color: yellow !important;
+}
+
+.form-check-input:focus{
+    box-shadow: none !important;
+}
+
 .arrow-icon {
     display: none;
 }
 
+.custom-placeholder::placeholder{
+    color: rgba(0,0,0,0.54)
+}
+
+.danger-input::placeholder{
+    color:rgb(221,44,0);
+}
+
+
+.danger-input{
+    color : rgb(221,44,0) !important;
+    border-color: rgb(221,44,0) !important
+}
 
 .header-cell:hover .arrow-icon {
     display: inline-block;
@@ -41,6 +114,14 @@
     color: black;
 }
 
+.select2-search__field{
+    width : 100% !important
+}
+
+.select2-dropdown--below{
+    width: 500px !important;
+}
+
 .select2-container--default.select2-container--focus .select2-selection--multiple,
 .select2-container--default .select2-selection--multiple {
     border: none;
@@ -54,6 +135,10 @@
 
 .switch-input-lg {
     transform: scale(1.5);
+}
+
+.import-asset-card{
+    box-shadow : 0 1px 3px 0 rgba(0,0,0,.2),0 1px 1px 0 rgba(0,0,0,.14),0 2px 1px -1px rgba(0,0,0,.12)
 }
 
 .form-switch {
@@ -99,10 +184,11 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 999;
 }
 
-.modal-main {
+.modal-user {
     position: fixed;
     background: white;
     width: 80%;
@@ -110,6 +196,96 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.modal-user-fullscreen{
+    position: fixed;
+    background: white;
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+}
+
+.modal-asset{
+    position : relative;
+    background: white;
+    width: 900px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.tiny-modal-asset{
+    position : relative;
+    background: white;
+    width: 420px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal-category{
+    position : relative;
+    background: white;
+    width: 900px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.tiny-modal-category{
+    position : relative;
+    background: white;
+    width: 260px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal-MOSP{
+    position : relative;
+    background: white;
+    width: 900px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.fullscreen-modal-MOSP{
+    position: fixed;
+    background: white;
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+}
+
+.asset-import-modal{
+    position : relative;
+    background: white;
+    width: 240px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal-CSV{
+    position : relative;
+    background: white;
+    width: 900px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.fullscreen-modal-CSV{
+    position: fixed;
+    background: white;
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
 }
 
 .alert-delete {
@@ -122,6 +298,16 @@
     transform: translate(-50%, -50%);
     padding: 10px;
     border-radius: 10px;
+}
+
+
+.btn-asset-import{
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+    width: 100%;
+}
+
+.btn-asset-import:active{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,.4);
 }
 
 .card {
